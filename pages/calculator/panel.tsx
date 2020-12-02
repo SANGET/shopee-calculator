@@ -11,52 +11,70 @@ import Grid from '@material-ui/core/Grid';
 import Paper from '@material-ui/core/Paper';
 import clsx from 'clsx';
 
-export class Calculator extends React.Component {
+export default class Calculator extends React.Component {
   render() {
     return (
       <Container maxWidth="sm">
-        <Paper className="calculator-container">
+        <Paper className="calculator-container" style={{padding: 20}}>
           <h3>参数输入</h3>
-          <Grid>
-            <FormControl className={clsx()}>
-              <Input
-                id="standard-adornment-weight"
-                value={'values.weight'}
-                // onChange={handleChange('weight')}
-                endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
-                aria-describedby="standard-weight-helper-text"
-                inputProps={{
-                  'aria-label': 'weight',
-                }}
-              />
-              <FormHelperText id="standard-weight-helper-text">Weight</FormHelperText>
-            </FormControl>
-            <TextField label="采购价格" />
-            <TextField label="商品重量（克）" />
-          </Grid>
-          <Grid>
-            <TextField label="手续费%" />
-            <TextField label="附加费" />
-            <TextField label="利润%" />
-          </Grid>
-          <Grid>
-            <TextField label="包装重量（克）" />
-            <TextField label="折扣%" />
-            <Select
-              labelId="demo-simple-select-label"
-              id="demo-simple-select"
-              value={10}
-              // onChange={handleChange}
-            >
-              <MenuItem value={10}>Ten</MenuItem>
-              <MenuItem value={20}>Twenty</MenuItem>
-              <MenuItem value={30}>Thirty</MenuItem>
-            </Select>
-            <TextField label="汇率" />
-            <TextField label="物流" />
+          <Grid container spacing={3}>
+            <Grid item>
+              <FormControl className={clsx()}>
+                <Input
+                  id="standard-adornment-weight"
+                  value={'values.weight'}
+                  // onChange={handleChange('weight')}
+                  endAdornment={<InputAdornment position="end">Kg</InputAdornment>}
+                  aria-describedby="standard-weight-helper-text"
+                  inputProps={{
+                    'aria-label': 'weight',
+                  }}
+                />
+                <FormHelperText id="standard-weight-helper-text">Weight</FormHelperText>
+              </FormControl>
+            </Grid>
+            <Grid item>
+              <TextField label="采购价格" />
+            </Grid>
+            <Grid item>
+              <TextField label="商品重量（克）" />
+            </Grid>
+            <Grid item>
+              <TextField label="手续费%" />
+            </Grid>
+            <Grid item>
+              <TextField label="附加费" />
+            </Grid>
+            <Grid item>
+              <TextField label="利润%" />
+            </Grid>
+            <Grid item>
+              <TextField label="包装重量（克）" />
+            </Grid>
+            <Grid item>
+              <TextField label="折扣%" />
+            </Grid>
+            <Grid item>
+              <Select
+                labelId="demo-simple-select-label"
+                id="demo-simple-select"
+                value={10}
+                // onChange={handleChange}
+              >
+                <MenuItem value={10}>Ten</MenuItem>
+                <MenuItem value={20}>Twenty</MenuItem>
+                <MenuItem value={30}>Thirty</MenuItem>
+              </Select>
+            </Grid>
+            <Grid item>
+              <TextField label="汇率" />
+            </Grid>
+            <Grid item>
+              <TextField label="物流" />
+            </Grid>
           </Grid>
         </Paper>
-        <Paper className="result-area">
+        <Paper className="result-area" style={{padding: 20}}>
           <h3>计算结果</h3>
           <TextField label="实际运费" />
           <TextField label="销售价格" />

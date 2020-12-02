@@ -1,1 +1,1 @@
-export { Calculator } from './panel'
+export { default as Calculator } from './panel'
