@@ -238,6 +238,11 @@
     prop-types "^15.7.2"
     react-is "^16.8.0 || ^17.0.0"
 
+"@mini-code/base-func@^1.1.0":
+  version "1.1.0"
+  resolved "https://registry.npm.taobao.org/@mini-code/base-func/download/@mini-code/base-func-1.1.0.tgz#8c9e2d12074fa824b88312a7a73a4bd3f86f77ef"
+  integrity sha1-jJ4tEgdPqCS4gxKnpzpL0/hvd+8=
+
 "@mini-code/request@^1.0.5":
   version "1.0.5"
   resolved "https://registry.npm.taobao.org/@mini-code/request/download/@mini-code/request-1.0.5.tgz#ef231e3a9db274b069a58ebdcc6b67fa5697f718"

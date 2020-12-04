@@ -1,4 +1,5 @@
 import React from 'react'
+import MuiTextField from '@material-ui/core/TextField';
 import FormControl from '@material-ui/core/FormControl';
 import InputLabel from '@material-ui/core/InputLabel';
 import Input from '@material-ui/core/Input';
@@ -17,12 +18,12 @@ import { getRate } from './getRate'
 
 const currencyInfo = [
   {
-    alias: '台湾',
-    scur: 'TWD'
+    label: '台湾',
+    value: 'TWD'
   },
   {
-    alias: '印尼',
-    scur: 'IDR'
+    label: '印尼',
+    value: 'IDR'
   },
 ]
 
@@ -61,12 +62,23 @@ export default class Calculator extends React.Component<CalculatorProps, Calcula
     this.state = {
       // currency: 
       calcResult: {
-
+        customFreight: 0,
+        realFreight: 0,
+        realProfix: 0,
+        salePrice: 0,
       }
     }
   }
   calc = async (values: FormData) => {
-    console.log(values);
+    // console.log(values);
+    this.setState({
+      calcResult: {
+        customFreight: 0,
+        realFreight: 0,
+        realProfix: 0,
+        salePrice: 0,
+      }
+    })
   }
 
   validate = (values: FormData) => {
@@ -100,29 +112,11 @@ export default class Calculator extends React.Component<CalculatorProps, Calcula
                   <TextField label="利润率" name="profix" required={true} />
                   <TextField label="包装重量（克）" name="weightOfPack" required={true} />
                   <TextField label="折扣" name="discount" required={true} />
-                  <FormControl style={{minWidth: '200px'}}>
-                    <InputLabel id="demo-simple-select-label">
-                      站点选择
-                    </InputLabel>
-                    <Select
-                      labelId="demo-simple-select-label"
-                      name="currency"
-                    >
-                      {
-                        currencyInfo.map((info, idx) => {
-                          const { alias, scur } = info;
-                          return (
-                            <MenuItem 
-                              value={scur} 
-                              key={scur}>
-                              {alias}
-                            </MenuItem>
-                          )
-                        })
-                      }
-                    </Select>
-                  </FormControl>
-                  <pre>{JSON.stringify(values)}</pre>
+                  <Select
+                    label="站点选择"
+                    name="currency"
+                    data={currencyInfo}
+                  />
                   <Button
                     type="submit"
                     variant="contained" color="primary" disableElevation
@@ -137,10 +131,10 @@ export default class Calculator extends React.Component<CalculatorProps, Calcula
         </Paper>
         <Paper className="result-area" style={{padding: 20}}>
           <h3>计算结果</h3>
-          {/* <TextField label="实际运费" value={calcResult.realFreight} />
-          <TextField label="销售价格" value={calcResult.salePrice} />
-          <TextField label="卖家承担的运费" value={calcResult.customFreight} />
-          <TextField label="利润" value={calcResult.salePrice} /> */}
+          <MuiTextField label="实际运费" value={calcResult.realFreight} />
+          <MuiTextField label="销售价格" value={calcResult.salePrice} />
+          <MuiTextField label="卖家承担的运费" value={calcResult.customFreight} />
+          <MuiTextField label="利润" value={calcResult.salePrice} />
         </Paper>
       </Container>
     )
