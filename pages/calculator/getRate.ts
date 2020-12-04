@@ -1,4 +1,4 @@
-import { RequestClass } from '@mini-code/request'
+// import { RequestClass } from '@mini-code/request'
 
 interface ResStruct {
   success: string
@@ -12,7 +12,7 @@ interface ResStruct {
   }
 }
 
-const $R = new RequestClass<ResStruct>();
+// let $R: typeof RequestClass
 
 export interface GetRateApiOptions {
   scur: string
@@ -38,6 +38,7 @@ const res = {
 export const getRate = async ({
   scur, tcur
 }: GetRateApiOptions) => {
+  // if(!$R) $R = new RequestClass<ResStruct>();
   if(rateCache[scur]) return rateCache[scur];
   const apiUrl = `http://api.k780.com/?app=finance.rate&scur=${scur}&tcur=${tcur}&appkey=55916&sign=4d064cee9f44223231209ba9ad22e550`
   const res = await $R.get(apiUrl)
