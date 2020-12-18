@@ -14,12 +14,16 @@
     "@mini-code/base-func": "^1.1.0",
     "@mini-code/request": "^1.0.5",
     "final-form": "^4.20.1",
+    "formik": "^2.2.6",
+    "formik-material-ui": "^3.0.1",
     "mui-rff": "^2.5.6",
     "next": "^10.0.0",
     "react": "16.13.1",
     "react-dom": "16.13.1",
     "react-final-form": "^6.5.2",
-    "react-transition-group": "^4.4.1"
+    "react-transition-group": "^4.4.1",
+    "sortablejs": "^1.12.0",
+    "yup": "^0.32.8"
   },
   "devDependencies": {
     "@types/node": "^14.14.10",

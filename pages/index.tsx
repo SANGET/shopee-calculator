@@ -3,6 +3,7 @@ import Head from 'next/head'
 import Link from 'next/link'
 
 import Calculator from './calculator/panel'
+import Form from './form'
 
 export default function Home() {
   return (
@@ -14,6 +15,7 @@ export default function Home() {
 
       <main>
         <Calculator />
+        {/* <Form /> */}
       </main>
 
       <footer>

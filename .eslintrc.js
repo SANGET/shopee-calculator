@@ -2,6 +2,7 @@ module.exports = {
   "extends": [
     "plugin:@typescript-eslint/recommended",
     "react-app",
+    "airbnb",
     "prettier",
   ],
   "plugins": [
